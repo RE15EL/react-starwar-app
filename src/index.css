@@ -21,6 +21,10 @@
   scroll-behavior: smooth;
 }
 
+.section-title{
+  margin-bottom: 1rem;
+}
+
 a {
   font-weight: 500;
   color: rgba(156, 157, 156, 0.542);
