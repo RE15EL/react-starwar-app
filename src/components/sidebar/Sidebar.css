@@ -6,7 +6,16 @@
     gap: 1rem;
   }
   .nav-link{
+    border: 1px solid transparent;
     text-transform: uppercase;
     font-size: .7rem;
     padding: .6rem 0;
+  }
+  .nav-link:hover{
+    color: aquamarine;
+    text-shadow: none !important;
+  }
+  .active-link{
+    color: aquamarine ;
+    border-bottom-color: aquamarine !important;
   }
