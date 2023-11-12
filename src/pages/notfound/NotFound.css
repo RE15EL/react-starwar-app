@@ -1,0 +1,7 @@
+.main-content{
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background-image: url('404.jpg');
+    background-repeat: no-repeat;
+}
