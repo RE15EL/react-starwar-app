@@ -1,7 +1,15 @@
 main.container{
     display: flex;
     flex-wrap: wrap;
-    gap: 4rem;
+    justify-content: space-between;
+}
+
+.search-wrapper{
+    width: 100%;
+    /* padding: 1rem 0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .list-item{

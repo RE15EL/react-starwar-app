@@ -1,0 +1,23 @@
+.search{
+    color: rgb(138, 175, 175);
+    padding: 1rem;
+    border: 1px solid transparent;
+    outline: none;
+    border-radius: .5rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    letter-spacing: .1rem;
+}
+.search:focus{   
+    border: none;
+    outline: 1px ridge rgba(0, 255, 255, 0.751); 
+}
+.search:hover{   
+    border-color: rgba(0, 255, 255, 0.751);
+}
+
+@media (width < 1245px){
+    .search{        
+        width: 90%;
+    }
+}
