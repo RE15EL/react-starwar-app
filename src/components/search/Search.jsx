@@ -1,29 +1,32 @@
 import './Search.css';
 import { base_url } from '../../hooks/useFetch/useFetch';
 import { useEffect, useState } from 'react';
+import { useDebounce } from 'use-debounce';
 
 
-export function Search() {
-    // const { data, loading, error} = useFetch(`${base_url}/people/?search=${term}`);
+export function Search( { setData, setLoading } ) {
     const [ term, setTerm] = useState('');
-    const [ result, setResult] = useState(null);
-
-    const handleOnChange = (e) => {
-        setTerm(e.target.value);
-        fetch(`${base_url}/people/?search=${term}`)
-            .then(res => res.json())
-            .then(data => setResult(data))
-    }
+    const [ debouncedSearchTerm]  = useDebounce(term, 400);
 
     useEffect(()=>{
-        if (term){
-            fetch(`${base_url}/people/?search=${term}`)
-                .then(res => res.json())
-                .then(data => setResult(data))
-        }else{ return}
-    }, [term])
+        if (term.length === 0) return;        
+            
+        if (debouncedSearchTerm) {
+            setLoading(true);
+            fetch(`${base_url}/people/?search=${debouncedSearchTerm}`)
+                .then(res =>res.json())
+                .then(data => setData(data))
+                .finally(()=> setLoading(false))
+        }
+        
+    }, [debouncedSearchTerm])
 
     return (
-        <input onChange={handleOnChange} className="search" type="search" placeholder="Search character."/>
+        <input  
+            type="search" 
+            className="search" 
+            placeholder="Search character."
+            onChange={(e)=> setTerm(e.target.value)} 
+        />
     )
 }

@@ -20,7 +20,7 @@ export default function People() {
   return (
     <main className='container'>
       <div className="search-wrapper">
-        <Search />
+        <Search setLoading={setLoading} setData={setData}/>
       </div>
 
       <section className='peoples'>
