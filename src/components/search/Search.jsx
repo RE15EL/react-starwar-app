@@ -9,16 +9,17 @@ export function Search( { setData, setLoading } ) {
     const [ debouncedSearchTerm]  = useDebounce(term, 400);
 
     useEffect(()=>{
+        const abortController = new AbortController();
         if (term.length === 0) return;        
             
         if (debouncedSearchTerm) {
             setLoading(true);
-            fetch(`${base_url}/people/?search=${debouncedSearchTerm}`)
+            fetch(`${base_url}/people/?search=${debouncedSearchTerm}`, {signal: abortController.signal})
                 .then(res =>res.json())
                 .then(data => setData(data))
                 .finally(()=> setLoading(false))
         }
-        
+        return ()=> abortController.abort();
     }, [debouncedSearchTerm])
 
     return (

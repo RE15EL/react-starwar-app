@@ -23,7 +23,7 @@ export default function People() {
         <Search setLoading={setLoading} setData={setData}/>
       </div>
 
-      <section className='peoples'>
+      <section className='peoples-paginator'>
         { error && <div style={{ padding: "1rem", border: "1px solid red" }}> Ocurrió un error al obtener los datos</div>} 
         { loading 
           ? <h3 style={{color: "#fff"}}> Loading ... </h3> 
@@ -34,9 +34,10 @@ export default function People() {
               </ul> 
             </>
         }
+        
+        <Paginator setLoading={setLoading} data={data} setData={setData}/>
       </section>
       
-      <Paginator setLoading={setLoading} data={data} setData={setData}/>
       { showDetail && <PeopleDetails id={currentPeopleId}/>}
     </main>
   )

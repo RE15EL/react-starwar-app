@@ -14,11 +14,14 @@ export function Paginator({ data, setData, setLoading }) {
     }
 
     useEffect(()=>{
+        const abortController = new AbortController();
         setLoading(true);
-        fetch(`${base_url}people/?page=${debouncedPageIndex}`)
+        fetch(`${base_url}people/?page=${debouncedPageIndex}`, {signal: abortController.signal})
           .then(res => res.json())
           .then(result => setData(result))
           .finally(()=> setLoading(false))
+
+          return () => abortController.abort();
       },[debouncedPageIndex])
 
     return (
