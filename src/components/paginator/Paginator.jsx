@@ -6,7 +6,7 @@ import { useDebounce } from 'use-debounce';
 export function Paginator({ data, setData, setLoading }) {
     const [ pageIndex, setPageIndex] = useState(1);
     const [ debouncedPageIndex ]  = useDebounce(pageIndex, 400);
-    const pagesTotal = data ? Math.trunc(data?.count/10): 1;
+    const pagesTotal = data ? Math.trunc( (data?.count/10) +1 ): 1;
 
     const handlePaginator = (index)=>{
         if(index <1 || index > pagesTotal) return;
