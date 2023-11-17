@@ -2,7 +2,7 @@ import './PeopleDetails.css';
 import { base_url, useFetch } from '../../hooks/useFetch/useFetch';
 
 export function PeopleDetails({id}) {
-  const { data, loading, error} = useFetch(`${base_url}people/${id}`);
+  const { data, loading } = useFetch(`${base_url}people/${id}`);
 
   return (
      

@@ -34,5 +34,6 @@ export const useFetch = (url)=>{
         }
     }
     
-    return {data, loading, error, handleCancelRequest};
+    return {data, setData, loading, setLoading, error, handleCancelRequest};
 }
+
