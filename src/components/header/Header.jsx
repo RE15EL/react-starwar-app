@@ -1,9 +1,10 @@
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
     <header className='header'>
-        <h1 className='brand'>Star Wars Api</h1>
+        <Link to="/" className='brand'>Star Wars Api</Link>
     </header>
   )
 }

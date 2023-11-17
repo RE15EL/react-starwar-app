@@ -1,7 +1,7 @@
 .header{
     width: 100vw;
     height: 120px;
-    padding: 0 4rem;
+    padding: 0 6rem;
     
     background: rgb(36,36,36);
     background: linear-gradient(90deg,
@@ -11,4 +11,14 @@
     display: flex;
     align-items: center;
     color: aquamarine;
+}
+
+.brand{
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: aquamarine;
+}
+.brand:hover{  
+  color: aqua;
+  text-shadow: 0 0 15px aquamarine;
 }
