@@ -1,0 +1,14 @@
+.btn-md{
+    padding: 0.4em 1em;
+    font-size: .8em;
+    color: aqua !important;
+}
+
+.btn-md:disabled{
+    background-color: gray;
+    color: rgb(70, 66, 66) !important;
+    border:none !important;
+    outline: none !important;
+    user-select: none !important;
+    cursor: no-drop !important;
+}

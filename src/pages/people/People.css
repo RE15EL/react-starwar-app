@@ -22,11 +22,7 @@ main.container{
     text-shadow: 0 0 10px gray;
 }
 
-.btn-md{
-    padding: 0.4em 1em;
-    font-size: .8em;
-    color: aqua !important;
-}
+
 
 @media (width < 1245px){
     main.container{
